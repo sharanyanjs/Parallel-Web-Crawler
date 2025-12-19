@@ -40,12 +40,68 @@ A high-performance, multi-threaded web crawler built with Java (17+), demonstrat
 
 ## 🏗️ Architecture
 
-flowchart TD
-    A[WebCrawlerMain]
-    
-    A --> B[ConfigurationLoader]
-    A --> C[CrawlResultWriter]
-    A --> D[ParallelWebCrawler<br/>(ForkJoinPool)]
-    
-    D --> E[PageParserFactory]
-    D --> F[Profiler<br/>(Dynamic Proxy)]
++--------------------+
+|  WebCrawlerMain    |
++--------------------+
+          |
+          v
++--------------------+
+| ConfigurationLoader|
++--------------------+
+          |
+          v
++--------------------+
+| ParallelWebCrawler |
+|  (ForkJoinPool)    |
++--------------------+
+          |
+          v
++--------------------+
+| PageParserFactory  |
++--------------------+
+          |
+          v
++--------------------+
+| Profiler (Proxy)   |
++--------------------+
+          |
+          v
++--------------------+
+| CrawlResultWriter  |
++--------------------+
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+- ☕ **Java JDK 17+**
+- 🏗️ **Maven 3.6.3+**
+- 🌐 **Internet connection** (for web crawling)
+- 💻 **IntelliJ IDEA** (recommended) or any Java IDE
+
+### Installation
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/parallel-web-crawler.git
+
+# 2. Navigate to the project directory
+cd parallel-web-crawler
+
+# 3. Build the project
+mvn clean package
+
+# Run the sequential crawler (legacy implementation)
+java -jar target/udacity-webcrawler-1.0.jar src/main/config/sample_config_sequential.json
+
+# Run the parallel crawler (4 threads)
+java -jar target/udacity-webcrawler-1.0.jar src/main/config/sample_config.json
+
+### 🎮 How to Use
+👤 Basic Usage Flow
+⚙️ Configure – Edit JSON configuration file
+
+🚀 Run Crawler – Execute with config file
+
+📊 View Results – Check output JSON file
+
+📈 Analyze Performance – Review profiling data
