@@ -29,36 +29,21 @@ A high-performance, multi-threaded web crawler built with Java (17+), demonstrat
 
 ## 🏗️ Architecture
 
-+--------------------+
-|  WebCrawlerMain    |
-+--------------------+
-          |
-          v
-+--------------------+
-| ConfigurationLoader|
-+--------------------+
-          |
-          v
-+--------------------+
-| ParallelWebCrawler |
-|  (ForkJoinPool)    |
-+--------------------+
-          |
-          v
-+--------------------+
-| PageParserFactory  |
-+--------------------+
-          |
-          v
-+--------------------+
-| Profiler (Proxy)   |
-+--------------------+
-          |
-          v
-+--------------------+
-| CrawlResultWriter  |
-+--------------------+
-
+🏗️ Architecture Overview
+Layer	Component	Responsibility
+Entry Point	WebCrawlerMain	Application entry point; wires dependencies and starts the crawl
+Configuration	ConfigurationLoader	Loads and parses JSON configuration
+Core Engine	ParallelWebCrawler	Performs parallel crawling using ForkJoinPool
+Parsing	PageParserFactory	Creates page parsers for extracting links and words
+Profiling	Profiler (Proxy)	Intercepts @Profiled methods and records execution times
+Output	CrawlResultWriter	Writes crawl results and statistics to JSON
+🔁 Data Flow
+Step	Source	Destination	Description
+1	WebCrawlerMain	ConfigurationLoader	Load crawler configuration
+2	WebCrawlerMain	ParallelWebCrawler	Start crawling process
+3	ParallelWebCrawler	PageParserFactory	Parse page content and links
+4	ParallelWebCrawler	Profiler	Measure method execution time
+5	ParallelWebCrawler	CrawlResultWriter	Persist crawl results
 
 ## 🚀 Quick Start
 
