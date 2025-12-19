@@ -40,7 +40,6 @@ A high-performance, multi-threaded web crawler built with Java (17+), demonstrat
 
 ## 🏗️ Architecture
 
-```mermaid
 flowchart TD
     A[🚀 WebCrawlerMain<br/>Main Entry Point] --> B[📄 JSON Config File]
     B --> C[⚙️ ConfigurationLoader]
