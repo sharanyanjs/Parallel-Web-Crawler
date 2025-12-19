@@ -2,17 +2,6 @@
 
 A high-performance, multi-threaded web crawler built with Java (17+), demonstrating advanced concurrency patterns, functional programming, and performance profiling.
 
-## 📋 Table of Contents
-- [✨ Features](#-features)
-- [🏗️ Architecture](#️-architecture)
-- [🚀 Quick Start](#-quick-start)
-- [📁 Project Structure](#-project-structure)
-- [🎮 How to Use](#-how-to-use)
-- [🔧 Code Examples](#-code-examples)
-- [🧪 Testing](#-testing)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-
 ## ✨ Features
 
 ### 🎯 Core Functionality
@@ -96,7 +85,7 @@ java -jar target/udacity-webcrawler-1.0.jar src/main/config/sample_config_sequen
 # Run the parallel crawler (4 threads)
 java -jar target/udacity-webcrawler-1.0.jar src/main/config/sample_config.json
 
-### 🎮 How to Use
+🎮 How to Use
 👤 Basic Usage Flow
 ⚙️ Configure – Edit JSON configuration file
 
