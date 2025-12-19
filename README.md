@@ -47,14 +47,15 @@ The result is a scalable, thread-safe crawler with configurable behavior and bui
 ## 🏗️ Architecture
 
 ┌─────────────────────────────────────────────┐
-│ WebCrawlerMain │
+│              WebCrawlerMain                 │
 ├─────────────────────────────────────────────┤
-│ ConfigurationLoader │ CrawlResultWriter │
+│  ConfigurationLoader  │  CrawlResultWriter  │
 ├─────────────────────────────────────────────┤
-│ ParallelWebCrawler (ForkJoinPool) │
+│        ParallelWebCrawler (ForkJoinPool)    │
 ├─────────────────────────────────────────────┤
-│ PageParserFactory │ Profiler (Proxy) │
+│  PageParserFactory  │  Profiler (Proxy)     │
 └─────────────────────────────────────────────┘
+
 
 ---
 
@@ -76,7 +77,8 @@ src/main/java/com/udacity/webcrawler/
 ├── SequentialWebCrawler.java
 ├── WebCrawler.java
 ├── WordCounts.java
-└── main/WebCrawlerMain.java
+└── main/
+    └── WebCrawlerMain.java
 
 ---
 
